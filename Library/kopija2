@@ -1,0 +1,122 @@
+// SIGN UP
+const signUp = document.getElementById("signup");
+const users = [];
+// EVENT ADD USER
+signUp.addEventListener("click", () => {
+  addUser();
+});
+// FUNKCIJA ZA DODATI KORISNIKA
+function addUser() {
+  let name = prompt("Please enter your username.");
+  let dateBirth = prompt("Please enter your date of birth.");
+  if (name !== null && name !== "") {
+    alert(name);
+  }
+  if (dateBirth !== "" || dateBirth !== null) {
+    alert(dateBirth);
+  }
+  if (name !== null && name !== "" && dateBirth !== null && dateBirth !== "") {
+    let newUser = {
+      name: name,
+      dateOfBirth: dateBirth,
+    };
+    // TODO: pronaci usera sa tim imenom, ako postoji izbaciti alert da vec postoji
+    users.push(newUser);
+    addUserToUserTable(newUser);
+    addUserToDropdown(newUser);
+  }
+}
+// FUNKCIJA OBRISATI KORISNIKA
+function deleteUserFromTheTable(e) {
+    e.target?.parentNode?.parentNode.remove();
+    // ? = null checker
+}
+function addListener() {
+  const users = document.querySelectorAll(".removeUser");
+  users[users.length - 1].addEventListener("click", (e) =>
+    deleteUserFromTheTable(e)
+  );
+}
+// TODO: napraviti odvojenu funkciju does user exists
+function addUserToUserTable(user) {
+  const userTable = document.getElementById("userTableBody");
+  let row = userTable.insertRow();
+  let name = row.insertCell(0);
+  name.innerHTML = user.name;
+  // TODO:povezati sa rentanjem knjige
+  let nrOfBooks = row.insertCell(1);
+  let remove = row.insertCell(2);
+  console.log(remove);
+  remove.innerHTML += `<td><button class='removeUser'>Remove User</button></td>`;
+  addListener();
+}
+// BOOKS IN LIBRARY
+let ourBooks = [
+  {
+    name: "Harry Potter and Philosophers Stone",
+    author: "J.K. Rowling",
+    books: 14,
+    onStock: 14,
+  },
+  {
+    name: "1984",
+    author: "George Orwell",
+    books: 20,
+    onStock: 20,
+  },
+  {
+    name: "The Road To Wigan Pier",
+    author: "George Orwell",
+    books: 5,
+    onStock: 5,
+  },
+  {
+    name: "War and Peace",
+    author: "Leo Tolstoy",
+    books: 7,
+    onStock: 7,
+  },
+  {
+    name: "Harry Potter and Half-Blood Prince",
+    author: "J.K. Rowling",
+    books: 4,
+    onStock: 4,
+  },
+  {
+    name: "Anna Karenina",
+    author: "Leo Tolstoy",
+    books: 4,
+    onStock: 4,
+  },
+];
+// POPUNJAVANJE TABELE KNJIGA
+let table = document.getElementById("booksTableBody");
+for (let obj of ourBooks) {
+  let tr = table.insertRow();
+  tr.insertCell().textContent = obj.name;
+  tr.insertCell().textContent = obj.author;
+  tr.insertCell().textContent = obj.books;
+  tr.insertCell().textContent = obj.onStock;
+}
+// ADD USER TO DROPDOWN
+function addUserToDropdown(user) {
+  const selectUser = document.getElementById("dropdownUsername");
+  addOptionToDropdown(user.name, selectUser);
+}
+// ADD BOOK TO DROPDOWN
+function addBookToDropdown(book) {
+  const selectBook = document.getElementById("dropdownBook");
+  addOptionToDropdown(book.name, selectBook);
+}
+function addOptionToDropdown(option, dropdown) {
+  let elements = document.createElement("option");
+  elements.textContent = option;
+  elements.value = option;
+  dropdown.appendChild(elements);
+}
+for (const user of users) {
+  addUserToDropdown(user);
+}
+for (const book of ourBooks) {
+  addBookToDropdown(book);
+}

@@ -1,0 +1,74 @@
+//TODO: PROCITATI VISE O EVENT OOPCIJAMA U HTML/JS
+// let deleteInput = document.getElementById("deleteUsername");
+// function changeEventHandler(params) {
+//   console.log("change event", params);
+// }
+// function clickEventHandler(params) {
+//   console.log("click event", params);
+// }
+// deleteInput.addEventListener("click", clickEventHandler);
+// deleteInput.addEventListener("change", changeEventHandler);
+
+// let myBook = ourBooks.find((book) => book.name === "Anna Karenina");
+
+// let myBooks = ourBooks.filter((book) => book.name === "Anna Karenina");
+// IMPLEMENTACIJA .find FUNKCIJE
+// function findBookByName(name) {
+//     for (let i = 0; i < ourBooks.length; i++) {
+//         if (ourBooks[i].name === name) {
+//         return ourBooks[i];
+//     }
+//     }
+// }
+// let mirkovaOmiljenaKnjiga = findBookByName('Anna Karenina');
+// IMPLEMENTACIJA .filter FUNKCIJE
+// function filterBooksByName(name) {
+//     let filterBooks = [];
+//     for(let i=0; i < ourBooks.length; i++){
+//         if(ourBooks[i].name === name) {
+//             filterBooks.push(ourBooks[i])
+//         }
+//     }
+//     return filterBooks;
+// }
+// function filterBooksByCount(count) {
+//     let filterBooks = [];
+//     for(let i=0; i < ourBooks.length; i++){
+//         if(ourBooks[i].books > count) {
+//             filterBooks.push(ourBooks[i])
+//         }
+//     }
+//     return filterBooks;
+// }
+
+// let pronadjeneKnjige = filterBooksByCount(10);
+
+// MUTACIJA OBJEKTA
+// function reduceBookCountByName(name) {
+//     console.log(ourBooks);
+//     let book = findBookByName(name);
+//     console.log(book, "MIRKO");
+//     book.onStock = book.onStock -1;
+//     console.log(book, 'MIRKO');
+//     console.log(ourBooks);
+// }
+// reduceBookCountByName('Anna Karenina');
+// TODO: procitati vise o forIN forOF and for LOOPS
+// for (let i = 0; i < users.length; i++) {
+//   addUserToDropdown(users[i]);
+// }
+// for (let i = 0; i < ourBooks.length; i++) {
+//   addBookToDropdown(ourBooks[i]);
+// }
+/* 
+TODO: datatypes READ MORE
+ * @param  {HTMLOptionElement} dropdown The first number
+ * @param  {String} option The second number
+ * @return {void}      The total of the two numbers
+ */
+ box.addEventListener('click', function handleClick(event) {
+  event.target.remove();
+});
+box.addEventListener('click', function handleClick(event) {
+  box.remove();
+});

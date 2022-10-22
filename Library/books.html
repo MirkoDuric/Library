@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library || Books</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./books.css">
+</head>
+<body>
+    <header class="navbar">
+            <h1 class="logo">LIBRARY</h1>
+            <ul>
+                <a href="./index.html">
+                    <li>Home</li>
+                </a>
+                <a href="./contact.html">
+                    <li>Contact</li>
+                </a>
+                <a href="./books.html">
+                    <li>Books</li>
+                </a>
+            </ul>
+    </header>
+    <main>
+        <section class="books-container">
+            <!-- LIST OF BOOKS -->
+            <article class="div-books">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Book name</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Number of Books</th>
+                            <th scope="col">In stock</th>
+                        </tr>
+                    <thead>
+                    <tbody id="booksTableBody">
+                    </tbody>
+                </table>
+            </article>
+            <!-- USER LIST -->
+            <article class="user-book">   
+                <div class="div-user">
+                    <table id="userTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Username</th>
+                                <th scope="col">Number of books rented</th>
+                                <th scope="col">Delete User</th>
+                            </tr>
+                            <thead>
+                            <tbody id="userTableBody">
+                            </tbody>
+                    </table>
+                </div>
+                <!-- SIGN UP BUTTON -->
+                <div class="sign-up">
+                    <input type="button" value="Sign up" id="signup" name="signup">
+                </div>
+                <!-- RENT/RETURN THE BOOK -->
+                <div class="div-add">
+                    <div class="dropdowns">
+                        <select name="dropdownUsername" id="dropdownUsername">
+                            <option value="Options">Options</option>
+                        </select>
+                    </div>
+                    <div id="dropdowns">
+                        <select name="dropdownBook" id="dropdownBook">
+                            <option value="Options">Options</option>
+                        </select>
+                    </div>
+                    <!-- RETURN/RENT BUTTONS -->
+                    <div class="buttons">
+                        <button type="submit" id="return">Return</button>
+                        <button type="submit" id="rent">Rent</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy;2022</p>
+        </div>
+    </footer>
+    <script src="./main.js"></script>
+</body>
+</html>
